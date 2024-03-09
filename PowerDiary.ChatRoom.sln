@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDiary.ChatRoom", "PowerDiary.ChatRoom\PowerDiary.ChatRoom.csproj", "{1750E7EC-5E4E-4C19-905C-46F8CB144632}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerDiary.ChatRoom", "PowerDiary.ChatRoom\PowerDiary.ChatRoom.csproj", "{1750E7EC-5E4E-4C19-905C-46F8CB144632}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{58A27AAF-48D7-443C-91E1-5A5C9EB3BE8A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{58A27AAF-48D7-443C-91E1-5A5C9EB3BE8A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{BDA0D8BC-3A83-4A0C-A568-B118F862D2C1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8EB36E46-BE1B-491D-A514-2DDF1B638D64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDiary.ChatRoom.Domain", "PowerDiary.ChatRoom.Domain\PowerDiary.ChatRoom.Domain.csproj", "{37907E44-6446-4359-BB48-AC377573ADC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerDiary.ChatRoom.Domain", "PowerDiary.ChatRoom.Domain\PowerDiary.ChatRoom.Domain.csproj", "{37907E44-6446-4359-BB48-AC377573ADC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDiary.ChatRoom.Infrastructure", "PowerDiary.ChatRoom.Infrastructure\PowerDiary.ChatRoom.Infrastructure.csproj", "{0CEF152C-B1D8-4B8A-900C-3C57984E0C42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerDiary.ChatRoom.Application", "PowerDiary.ChatRoom.Application\PowerDiary.ChatRoom.Application.csproj", "{0CEF152C-B1D8-4B8A-900C-3C57984E0C42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDiary.ChatRoom.Tests.UnitTests", "PowerDiary.ChatRoom.Tests.UnitTests\PowerDiary.ChatRoom.Tests.UnitTests.csproj", "{FA06A8F5-DCDD-4594-AEC2-33B7F7765956}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerDiary.ChatRoom.Tests.UnitTests", "PowerDiary.ChatRoom.Tests.UnitTests\PowerDiary.ChatRoom.Tests.UnitTests.csproj", "{FA06A8F5-DCDD-4594-AEC2-33B7F7765956}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerDiary.ChatRoom.Tests.ArchitectureTests", "PowerDiary.ChatRoom.Tests.ArchitectureTests\PowerDiary.ChatRoom.Tests.ArchitectureTests.csproj", "{2AF246A5-DDE3-4834-8097-C7678AF20B54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{FA06A8F5-DCDD-4594-AEC2-33B7F7765956}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA06A8F5-DCDD-4594-AEC2-33B7F7765956}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA06A8F5-DCDD-4594-AEC2-33B7F7765956}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AF246A5-DDE3-4834-8097-C7678AF20B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AF246A5-DDE3-4834-8097-C7678AF20B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AF246A5-DDE3-4834-8097-C7678AF20B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AF246A5-DDE3-4834-8097-C7678AF20B54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +53,7 @@ Global
 		{37907E44-6446-4359-BB48-AC377573ADC3} = {BDA0D8BC-3A83-4A0C-A568-B118F862D2C1}
 		{0CEF152C-B1D8-4B8A-900C-3C57984E0C42} = {58A27AAF-48D7-443C-91E1-5A5C9EB3BE8A}
 		{FA06A8F5-DCDD-4594-AEC2-33B7F7765956} = {8EB36E46-BE1B-491D-A514-2DDF1B638D64}
+		{2AF246A5-DDE3-4834-8097-C7678AF20B54} = {8EB36E46-BE1B-491D-A514-2DDF1B638D64}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A99A7DC-AA0C-4121-A6EF-1A9759D75467}

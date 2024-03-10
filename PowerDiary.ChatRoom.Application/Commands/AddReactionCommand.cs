@@ -2,10 +2,9 @@
 using PowerDiary.ChatRoom.Application.Extensions;
 using PowerDiary.ChatRoom.Application.Repositories.Interfaces;
 using PowerDiary.ChatRoom.Domain.Enums;
-using PowerDiary.ChatRoom.Domain.Models;
-using PowerDiary.ChatRoom.Infrastructure.Models;
+using PowerDiary.ChatRoom.Application.Models;
 
-namespace PowerDiary.ChatRoom.Infrastructure.Commands
+namespace PowerDiary.ChatRoom.Application.Commands
 {
     public record AddReactionCommand(
         Guid ChatRoomId, 
@@ -28,7 +27,7 @@ namespace PowerDiary.ChatRoom.Infrastructure.Commands
 
             var reactionType = (ReactionType)request.ReactionType;
 
-            chatRoom.AddReaction(request.ParticipantName, new Reaction(request.OtherParticipantName, reactionType));
+            chatRoom.AddReaction(request.ParticipantName, request.OtherParticipantName, reactionType);
 
             var chatRoomEvent = new Event(reactionType, GetContent(request, reactionType, request.At), request.At);
 

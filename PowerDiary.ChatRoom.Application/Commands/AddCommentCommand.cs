@@ -1,9 +1,8 @@
 ﻿using MediatR;
+using PowerDiary.ChatRoom.Application.Models;
 using PowerDiary.ChatRoom.Application.Repositories.Interfaces;
-using PowerDiary.ChatRoom.Domain.Models;
-using PowerDiary.ChatRoom.Infrastructure.Models;
 
-namespace PowerDiary.ChatRoom.Infrastructure.Commands
+namespace PowerDiary.ChatRoom.Application.Commands
 {
     public record AddCommentCommand(
         Guid ChatRoomId, 
@@ -23,7 +22,7 @@ namespace PowerDiary.ChatRoom.Infrastructure.Commands
             if (chatRoom == null)
                 return Task.FromResult(false);
 
-            chatRoom.AddCommment(request.ParticipantName, new Comment(request.Comment, request.At));
+            chatRoom.AddCommment(request.ParticipantName, request.Comment, request.At);
 
             var chatRoomEvent = new Event(EventType.Comment, GetContent(request, request.At), request.At);
 

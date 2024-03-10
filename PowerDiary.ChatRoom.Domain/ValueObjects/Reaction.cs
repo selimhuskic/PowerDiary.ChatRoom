@@ -1,6 +1,6 @@
 ﻿using PowerDiary.ChatRoom.Domain.Enums;
 
-namespace PowerDiary.ChatRoom.Domain.Models
+namespace PowerDiary.ChatRoom.Domain.ValueObjects
 {
     public class Reaction(string otherParticipantName, ReactionType reactionType)
     {

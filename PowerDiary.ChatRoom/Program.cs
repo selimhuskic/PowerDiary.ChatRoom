@@ -3,9 +3,8 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using PowerDiary.ChatRoom;
 using PowerDiary.ChatRoom.Application.Commands;
-using PowerDiary.ChatRoom.Infrastructure.Assembly;
-using PowerDiary.ChatRoom.Infrastructure.Commands;
-using PowerDiary.ChatRoom.Infrastructure.Queries;
+using PowerDiary.ChatRoom.Application.Queries;
+using PowerDiary.ChatRoom.Aplication.Assembly;
 
 Console.WriteLine("Power Diary Chat Room!");
 

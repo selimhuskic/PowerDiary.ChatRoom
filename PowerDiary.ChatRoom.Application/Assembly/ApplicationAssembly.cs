@@ -1,4 +1,4 @@
-﻿namespace PowerDiary.ChatRoom.Infrastructure.Assembly
+﻿namespace PowerDiary.ChatRoom.Aplication.Assembly
 {
     public class ApplicationAssembly
     {

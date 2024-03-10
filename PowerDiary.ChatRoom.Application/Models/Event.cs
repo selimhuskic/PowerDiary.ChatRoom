@@ -1,7 +1,7 @@
 ﻿using PowerDiary.ChatRoom.Domain.Enums;
 using System.Text.Json.Serialization;
 
-namespace PowerDiary.ChatRoom.Infrastructure.Models
+namespace PowerDiary.ChatRoom.Application.Models
 {
     public class Event
     {

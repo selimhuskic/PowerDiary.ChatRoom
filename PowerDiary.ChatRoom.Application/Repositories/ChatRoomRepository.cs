@@ -1,5 +1,5 @@
 ﻿using PowerDiary.ChatRoom.Application.Repositories.Interfaces;
-using PowerDiary.ChatRoom.Infrastructure.Models;
+using PowerDiary.ChatRoom.Application.Models;
 
 namespace PowerDiary.ChatRoom.Application.Repositories
 {

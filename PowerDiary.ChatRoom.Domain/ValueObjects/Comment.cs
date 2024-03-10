@@ -1,4 +1,4 @@
-﻿namespace PowerDiary.ChatRoom.Domain.Models
+﻿namespace PowerDiary.ChatRoom.Domain.ValueObjects
 {
     public record Comment(
         string Content, 

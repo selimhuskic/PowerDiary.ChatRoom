@@ -1,4 +1,5 @@
-﻿using PowerDiary.ChatRoom.Domain.Models;
+﻿using PowerDiary.ChatRoom.Domain.Enums;
+using PowerDiary.ChatRoom.Domain.ValueObjects;
 
 namespace PowerDiary.ChatRoom.Domain.Aggregates
 {
@@ -17,7 +18,7 @@ namespace PowerDiary.ChatRoom.Domain.Aggregates
             ReactionsPerParticipant = [];
         }
 
-        public void AddCommment(string participantName, Comment comment)
+        public void AddCommment(string participantName, string commentContent, DateTime at)
         {
             var isParticipantInAndActive = Participants.Any(p => p.Key.Name == participantName && p.Value);
 
@@ -26,10 +27,10 @@ namespace PowerDiary.ChatRoom.Domain.Aggregates
 
             var participant = Participants.First(p => p.Key.Name == participantName).Key;
 
-            CommentsPerParticipant[participant].Add(comment);
+            CommentsPerParticipant[participant].Add(new Comment(commentContent, at));
         }
 
-        public void AddReaction(string participantName, Reaction reaction)
+        public void AddReaction(string participantName, string otherParticipantName, ReactionType reactionType)
         {
             var isParticipantInAndActive = Participants.Any(p => p.Key.Name == participantName && p.Value);
 
@@ -38,7 +39,7 @@ namespace PowerDiary.ChatRoom.Domain.Aggregates
 
             var participant = Participants.First(p => p.Key.Name == participantName).Key;
 
-            ReactionsPerParticipant[participant].Add(reaction);
+            ReactionsPerParticipant[participant].Add(new Reaction(otherParticipantName, reactionType));
         }
 
         public void AddParticipant(string participantName)

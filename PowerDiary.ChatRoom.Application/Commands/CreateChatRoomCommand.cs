@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using PowerDiary.ChatRoom.Application.Repositories.Interfaces;
 
-namespace PowerDiary.ChatRoom.Infrastructure.Commands
+namespace PowerDiary.ChatRoom.Application.Commands
 {
     public record CreateChatRoomCommand() : IRequest<Guid>;
 

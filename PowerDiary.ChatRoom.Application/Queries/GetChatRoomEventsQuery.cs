@@ -2,9 +2,9 @@
 using PowerDiary.ChatRoom.Application.Enums;
 using PowerDiary.ChatRoom.Application.Repositories.Interfaces;
 using PowerDiary.ChatRoom.Application.Services.Interfaces;
-using PowerDiary.ChatRoom.Infrastructure.DTOs;
+using PowerDiary.ChatRoom.Application.DTOs;
 
-namespace PowerDiary.ChatRoom.Infrastructure.Queries
+namespace PowerDiary.ChatRoom.Application.Queries
 {
     public record GetChatRoomEventsQuery(Guid ChatRoomId, int Granularity) : IRequest<ChatHistoryDto>;
 

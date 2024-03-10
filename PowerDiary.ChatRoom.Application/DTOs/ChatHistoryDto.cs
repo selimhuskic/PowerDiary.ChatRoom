@@ -1,4 +1,4 @@
-﻿namespace PowerDiary.ChatRoom.Infrastructure.DTOs
+﻿namespace PowerDiary.ChatRoom.Application.DTOs
 {
     public class ChatHistoryDto
     {

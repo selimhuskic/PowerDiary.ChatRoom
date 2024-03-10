@@ -3,12 +3,12 @@ using PowerDiary.ChatRoom.Domain.ValueObjects;
 
 namespace PowerDiary.ChatRoom.Domain.Aggregates
 {
-    public class ChatRoom
+    public sealed class ChatRoom
     {
         public Guid Id { get; }
         public Dictionary<Participant, bool> Participants { get; }
         public Dictionary<Participant, List<Comment>> CommentsPerParticipant { get; }
-        public Dictionary<Participant, List<Reaction>> ReactionsPerParticipant { get; set; }
+        public Dictionary<Participant, List<Reaction>> ReactionsPerParticipant { get; }
 
         public ChatRoom()
         {
@@ -30,7 +30,7 @@ namespace PowerDiary.ChatRoom.Domain.Aggregates
             CommentsPerParticipant[participant].Add(new Comment(commentContent, at));
         }
 
-        public void AddReaction(string participantName, string otherParticipantName, ReactionType reactionType)
+        public void AddReaction(string participantName, string otherParticipantName, ReactionType reactionType, DateTime at)
         {
             var isParticipantInAndActive = Participants.Any(p => p.Key.Name == participantName && p.Value);
 
@@ -39,7 +39,7 @@ namespace PowerDiary.ChatRoom.Domain.Aggregates
 
             var participant = Participants.First(p => p.Key.Name == participantName).Key;
 
-            ReactionsPerParticipant[participant].Add(new Reaction(otherParticipantName, reactionType));
+            ReactionsPerParticipant[participant].Add(new Reaction(otherParticipantName, reactionType, at));
         }
 
         public void AddParticipant(string participantName)
@@ -58,6 +58,6 @@ namespace PowerDiary.ChatRoom.Domain.Aggregates
         {
             var participant = Participants.First(p => p.Key.Name == participantName).Key;
             Participants[participant] = false;
-        }            
+        }
     }
 }

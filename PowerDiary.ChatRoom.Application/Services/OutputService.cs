@@ -29,32 +29,38 @@ namespace PowerDiary.ChatRoom.Application.Services
                     e => e.ChatRoomEvent,
                     (key, cre) => new { Hour = key, Events = cre.ToList() });
 
-            foreach (var eventsInHour in eventsByHour)
-            {
-                response.Add(Environment.NewLine + $"{eventsInHour.Hour}:00");
-
-                var enterEvents = eventsInHour.Events.Where(e => e == EventType.EnterTheRoom);
-
-                if (enterEvents.Any())
-                    response.Add($"{enterEvents.Count()} entered");
-
-                var leftEvents = eventsInHour.Events.Where(e => e == EventType.LeaveTheRoom);
-
-                if (leftEvents.Any())
-                    response.Add($"{leftEvents.Count()} left");
-
-                var highFiveEvents = eventsInHour.Events.Where(e => e == EventType.LeaveTheRoom);
-
-                if (highFiveEvents.Any())
-                    response.Add($"{highFiveEvents.Count()} high fived");
-
-                var commentEvents = eventsInHour.Events.Where(e => e == EventType.Comment);
-
-                if (commentEvents.Any())
-                    response.Add($"{commentEvents.Count()} commented");
-            }
+            FormatOutputForHourlyAggregation();
 
             return response;
+
+            void FormatOutputForHourlyAggregation()
+            {
+                foreach (var eventsInHour in eventsByHour)
+                {
+                    response.Add(Environment.NewLine + $"{eventsInHour.Hour}:00");
+
+                    var enterEvents = eventsInHour.Events.Where(e => e == EventType.EnterTheRoom);
+
+                    if (enterEvents.Any())
+                        response.Add($"{enterEvents.Count()} entered");
+
+                    var leftEvents = eventsInHour.Events.Where(e => e == EventType.LeaveTheRoom);
+
+                    if (leftEvents.Any())
+                        response.Add($"{leftEvents.Count()} left");
+
+                    var highFiveEvents = eventsInHour.Events.Where(e => e == EventType.LeaveTheRoom);
+
+                    if (highFiveEvents.Any())
+                        response.Add($"{highFiveEvents.Count()} high fived");
+
+                    var commentEvents = eventsInHour.Events.Where(e => e == EventType.Comment);
+
+                    if (commentEvents.Any())
+                        response.Add($"{commentEvents.Count()} commented");
+                }
+
+            }
         }
     }
 }

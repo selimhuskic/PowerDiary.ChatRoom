@@ -1,6 +1,6 @@
 ﻿namespace PowerDiary.ChatRoom.Assembly.Domain
 {
-    public static class DomainAssembly
+    public sealed class DomainAssembly
     {
         // Used for architecture testing
     }

@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\PowerDiary.ChatRoom.Application\PowerDiary.ChatRoom.Application.csproj" />
     <ProjectReference Include="..\PowerDiary.ChatRoom.Domain\PowerDiary.ChatRoom.Domain.csproj" />
+    <ProjectReference Include="..\PowerDiary.ChatRoom\PowerDiary.ChatRoom.csproj" />
   </ItemGroup>
 
 </Project>

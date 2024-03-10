@@ -27,7 +27,7 @@ namespace PowerDiary.ChatRoom.Application.Commands
 
             var reactionType = (ReactionType)request.ReactionType;
 
-            chatRoom.AddReaction(request.ParticipantName, request.OtherParticipantName, reactionType);
+            chatRoom.AddReaction(request.ParticipantName, request.OtherParticipantName, reactionType, request.At);
 
             var chatRoomEvent = new Event(reactionType, GetContent(request, reactionType, request.At), request.At);
 

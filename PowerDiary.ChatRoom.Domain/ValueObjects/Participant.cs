@@ -1,4 +1,4 @@
 ﻿namespace PowerDiary.ChatRoom.Domain.ValueObjects
 {
-    public record Participant(string Name);
+    public sealed record Participant(string Name);
 }
